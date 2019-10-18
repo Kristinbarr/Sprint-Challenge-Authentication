@@ -8,11 +8,12 @@ module.exports = {
 }
 
 function find() {
-  return db('users')
+  return db('users').select('id', 'username')
 }
 
 function findById(id) {
   return db('users')
+    .select('id', 'username')
     .where({ id })
     .first()
 }
